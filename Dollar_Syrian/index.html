@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , maximum-scale=0, user-scalable=yes">
+    <title>Change Dollar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="main">
+        
+        <div class="h1">
+            <h1>Convert dollars to Syrian pounds</h1>
+        </div>
+        <div class="border">
+            <div class="result">
+                <h3 id="r">Result</h3>
+                <h2 id="h_r"></h2>
+            </div>  
+            <div class="d_dolar">
+                <span id="s_dolar">$</span>
+                <form >
+                    <label id="l_dolar" for="dolar">- Enter the dollar here to convert it to the Syrian currency</label>
+                    <input id="dolar" name="dolar" type="number"  placeholder="Enter the amount" required >
+                    <button id="b_dolar" type="submit" onclick="getValueD()">Sent</button>
+               </form>
+            </div>
+            <div class="result2">
+                <h3 id="r">Result</h3>
+                <h2 id="h_r2"></h2>
+            </div>  
+            <div class="d_syrian">
+                <span id="s_syrian">ل.س</span>
+                <form>
+                    <label id="l_syrian" for="syrian">- Enter the Syrian currency here to convert it to dollars</label>
+                    <input id="syrian" type="number" placeholder="Enter the amount" required >
+                    <button id="b_syrian" type="submit" onclick="getValueS()" >Sent</button>
+                </form>
+            </div>
+        </div>
+        <div class="dolar_price">
+            <marquee direction="left" scrollamount="5">The exchange rate of the dollar against the Syrian pound is:<span  id="price"></span></marquee>
+        </div>
+    </div>
+</body>
+</html>

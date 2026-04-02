@@ -1,0 +1,795 @@
+:root{
+    --body-color:#e1e1e1;
+    --main-color:#e8e8e8;
+    --head-color:#eeeeeeea;
+    --bor-color:#b9b9b97a;
+    --blue-color:#066bdf;
+}
+*{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box;    
+     transition: all 0.3s ease;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--body-color)
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap:15px;
+    width:35%;
+    height: auto;
+    min-height: 70%;
+    background: var(--main-color);
+    border-radius: 8%;
+    padding:25px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.209);
+}
+
+/* header */
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 15px;
+    width:100%;
+    height: auto;
+    min-height: 45%;
+    border-radius: 25px;
+    border: 3px dashed var(--bor-color);
+    background: var(--head-color);
+}
+.header h3 {
+    font-size:  1.1rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    word-spacing: 5px;
+}
+.header #file {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:8rem;
+    height: 8rem;
+    margin: 10px;
+    border-radius: 50%;
+    border:2px solid var(--main-color);
+    background-color: var(--main-color);
+    box-shadow: 0 20px 40px #066bdf88 , inset 0 0 50px #2f90ffa2;
+    margin-bottom: auto;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 9999;
+}
+.header #file:hover{
+    animation: up 0.7s linear alternate infinite; 
+    box-shadow: 0 20px 40px #066bdf88 , inset 0 0 50px #2f90ffee;
+}
+@keyframes up {
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(-5%);
+    }
+}
+.header #file svg{
+    pointer-events: none;
+    width:3.5rem;
+}
+.header .p {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-top: 8px;
+    width:80%;
+    font-size: clamp(0.4rem, 2vw , 0.7rem);
+    color:gray;
+    opacity: 0.6;
+    word-spacing: 6px;
+    text-wrap: nowrap;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+}
+/* download */
+.download{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+    align-items: center ;
+    gap:15px ;
+    width:100%;
+    height: auto;
+    min-height: 22%;
+    border-radius: 25px;
+    border:3px solid #f2f1f1;
+    padding: 15px;
+}
+.download .icon{
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:13%;
+    height: 80%;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.083),inset 0 0 30px #0077ff32;
+    border-radius: 20px;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+.download .icon svg{
+    width:2rem;
+    z-index:1;
+    
+}
+.download .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:baseline;
+    width:70%;
+    height: auto;
+    min-height: 50%;
+    gap:3px;
+    padding: 3px;
+    font-size: clamp(0.4rem, 0.8vw , 1rem);
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    word-break: break-word;
+    transition: all 0.3s ease;
+}
+.download .upload-container{
+    position: absolute;
+    bottom:0;
+    width:75%;
+    height: 20%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap:5px;
+    transition: all 0.3s linear;
+
+}
+.download .upload-container progress{
+    opacity: 0;
+    width:95%;
+    transition: all 0.3s ease;
+}
+.download .upload-container svg{
+    width:20px;
+    height:100%;
+    opacity: 0;
+}
+.download .text .time{
+    color:#b8b7b7ce;
+}
+.download .text .time p {
+    display: inline;
+}
+.download button{
+    width: 3.5rem;
+    height:3.5rem;
+    border-radius: 50px;
+    font-size: clamp(0.7rem , 2vw , 1.5rem);
+    background: #fefefe;
+    color:#b3b3b3;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.127),inset 0 0 20px hwb(0 96% 2% / 0.805);
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.download button:hover{
+    color:#8b8b8b;
+    background: rgba(220, 219, 219, 0.642);
+}
+.download button:active{
+    color:#757474;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.132);
+}
+
+/* btns */
+.btns{
+
+    display: flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    width:100%;
+    height: auto;
+    min-height: 10%;
+
+}
+.btns button{
+    width:45%;
+    height: 100%;
+    border-radius: 30px;
+    border:none;
+    font-weight: 600;
+    font-size: clamp(0.7rem , 1vw,1.5rem);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.btns .cancel {
+    border: 2px solid #bfbdbd;
+    background: none;
+}
+.btns .cancel:hover {
+    background:#e7e6e69d;
+    color:rgba(255, 0, 0, 0.957);
+}
+.btns .cancel:active{
+    color:rgba(255, 0, 0, 0.957);
+    transform: scale(1.02);
+}
+.btns .upload {
+    border:none;
+    color:rgb(243, 243, 243);
+    background:var(--blue-color);
+    transition: all 0.3s ease;
+}
+.btns .upload:hover {
+    color:rgb(255, 255, 255);
+    box-shadow:inset 0 0 20px #69adfb ;
+}
+.btns .upload:active{
+
+    transform: scale(1.02);
+
+}
+/* add */
+.add{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    width:100%;
+    gap: 40%;
+    height: 24vh;
+}
+.add a{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap:5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #969696;
+}
+.add a:hover{
+    filter: drop-shadow(0 0 0.1px  rgba(0, 0, 0, 0.263));
+    color: #787878;
+}
+.add a:nth-child(1){
+    position: absolute;
+    left:0;
+}
+.add a:nth-child(5){
+    position: absolute;
+    right:0;
+}
+.add .adding{
+    position: absolute;
+    left:42%;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #000; */
+    width:15.52%;
+    height:90%;
+    border-radius: 50px;
+    font-size: 3.5rem;
+    background:#ffffff;
+    color:#000;
+
+}
+
+.add .adding:active{
+    transform: scale(1.04);
+}
+.add a svg{
+    
+    width:60px;
+    transition: all 0.3s ease;
+}
+
+.add a svg:nth-child(2){
+    position: absolute;
+    opacity:0;
+    pointer-events: none;
+}
+
+@media (min-width:1200px) and (max-width:1600px) {
+    main{
+        width:45%;
+        min-height: 65%;
+        height: 45%;
+    }
+    .header h3{
+        font-size:1.2rem;
+    }
+    .header #file {
+        width:6rem;
+        height: 6rem;
+    }
+    .header #file svg{
+        width:3rem;
+    }
+    .header .p{
+        font-size: 1rem;
+    }
+    .download .icon{
+        width:3.5rem;
+        height: 3.3rem;
+        border-radius: 16px;
+    }
+    .download .icon svg{
+        width:1.8rem
+    }
+    .download .text .name {
+        font-size:0.9rem;;
+    }
+    .download .text {
+        font-size: 0.8rem;
+    }
+    .download button{
+        width:3.5rem;
+        height:3.5rem;
+        border: 2px solid var(--main-color);
+    }
+    .download .upload-container {
+        width:72%;
+        gap:3px;
+        bottom:9%;
+    }
+    .download .upload-container progress{
+        width:90%;
+    }
+    .download .upload-container svg{
+        width:15px;
+        height:80%;
+    }
+    .add .adding{
+        width:4.5rem;
+        height:4.5rem;
+        font-size:2rem;
+    }
+    .add a svg{
+    width:45px;
+    }
+    .add a p{
+        font-size: 0.5rem;
+    }
+}
+@media (min-width:900px) and (max-width:1200px) {
+    main{
+        width:40%;
+        min-height: 50%;
+        height: 45%;
+    }
+    .header h3{
+        font-size:90%;
+    }
+    .header #file {
+        width:4.5rem;
+        height: 4.5rem;
+    }
+    .header #file svg{
+        width:2.5rem;
+    }
+    
+    .download .icon{
+        width:2.5rem;
+        height: 2.3rem;
+        border-radius: 10px;
+    }
+    .download .icon svg{
+        width:1rem
+    }
+    .download .text .name {
+        font-size: 0.65rem;;
+    }
+    .download .text {
+        font-size: 0.6rem;
+    }
+    .download button{
+        width:2.5rem;
+        height:2.4rem;
+        border: 1px solid var(--main-color);
+    }
+    .download .upload-container {
+        width:68%;
+        gap:3px;
+        bottom:10%;
+    }
+    .download .upload-container progress{
+        width:90%;
+    }
+    .download .upload-container svg{
+        width:8px;
+        height:80%;
+    }
+    .add .adding{
+        width:3rem;
+        height:3rem;
+        font-size:2rem;
+    }
+    .add a svg{
+    width:30px;
+    }
+    .add a p{
+        font-size: 0.5rem;
+    }
+}
+@media (min-width:800px) and (max-width:900px) {
+    main{
+        width:50%;
+        min-height: 50%;
+        height: 45%;
+    }
+    .header h3{
+        font-size:90%;
+    }
+    .header #file {
+        width:4.5rem;
+        height: 4.5rem;
+    }
+    .header #file svg{
+        width:2.5rem;
+    }
+    
+    .download .icon{
+        width:2.5rem;
+        height: 2.3rem;
+        border-radius: 10px;
+    }
+    .download .icon svg{
+        width:1rem
+    }
+    .download .text .name {
+        font-size: 0.65rem;;
+    }
+    .download .text {
+        font-size: 0.6rem;
+    }
+    .download button{
+        width:2.5rem;
+        height:2.4rem;
+        border: 1px solid var(--main-color);
+    }
+    .download .upload-container {
+        width:65%;
+        gap:3px;
+        bottom:10%;
+    }
+    .download .upload-container progress{
+        width:90%;
+    }
+    .download .upload-container svg{
+        width:8px;
+        height:80%;
+    }
+    .add .adding{
+        width:3rem;
+        height:3rem;
+        font-size:2rem;
+    }
+    .add a svg{
+    width:30px;
+    }
+    .add a p{
+        font-size: 0.5rem;
+    }
+}
+@media (min-width:700px) and (max-width:800px) {
+    main{
+        width:55%;
+        min-height: 50%;
+        height: 45%;
+    }
+    .header h3{
+        font-size:90%;
+    }
+    .header #file {
+        width:4.5rem;
+        height: 4.5rem;
+    }
+    .header #file svg{
+        width:2.5rem;
+    }
+    
+    .download .icon{
+        width:2.5rem;
+        height: 2.3rem;
+        border-radius: 10px;
+    }
+    .download .icon svg{
+        width:1rem
+    }
+    .download .text .name {
+        font-size: 0.65rem;;
+    }
+    .download .text {
+        font-size: 0.6rem;
+    }
+    .download button{
+        width:2.5rem;
+        height:2.4rem;
+        border: 1px solid var(--main-color);
+    }
+    .download .upload-container {
+        width:65%;
+        gap:3px;
+        bottom:10%;
+    }
+    .download .upload-container progress{
+        width:90%;
+    }
+    .download .upload-container svg{
+        width:8px;
+        height:80%;
+    }
+    .add .adding{
+        width:3rem;
+        height:3rem;
+        font-size:2rem;
+    }
+    .add a svg{
+    width:30px;
+    }
+    .add a p{
+        font-size: 0.5rem;
+    }
+}
+@media (min-width:600px) and (max-width:700px) {
+    main{
+        width:60%;
+        min-height: 50%;
+        height: 45%;
+    }
+    .header h3{
+        font-size:90%;
+    }
+    .header #file {
+        width:4.5rem;
+        height: 4.5rem;
+    }
+    .header #file svg{
+        width:2.5rem;
+    }
+    
+    .download .icon{
+        width:2.5rem;
+        height: 2.3rem;
+        border-radius: 10px;
+    }
+    .download .icon svg{
+        width:1rem
+    }
+    .download .text .name {
+        font-size: 0.65rem;;
+    }
+    .download .text {
+        font-size: 0.5rem;
+    }
+    .download button{
+        width:2.5rem;
+        height:2.4rem;
+        border: 1px solid var(--main-color);
+    }
+    .download .upload-container {
+        width:65%;
+        gap:3px;
+        bottom:10%;
+    }
+    .download .upload-container progress{
+        width:90%;
+    }
+    .download .upload-container svg{
+        width:8px;
+        height:80%;
+    }
+    .add .adding{
+        width:3rem;
+        height:3rem;
+        font-size:2rem;
+    }
+    .add a svg{
+    width:30px;
+    }
+    .add a p{
+        font-size: 0.5rem;
+    }
+}
+@media (min-width:500px) and (max-width:600px) {
+    main{
+        width:70%;
+        min-height: 55%;
+        height: 55%;
+    }
+    .header h3{
+        font-size:90%;
+    }
+    .header #file {
+        width:4.5rem;
+        height: 4.5rem;
+    }
+    .header #file svg{
+        width:2.5rem;
+    }
+    
+    .download .icon{
+        width:2.5rem;
+        height: 2.3rem;
+        border-radius: 10px;
+    }
+    .download .icon svg{
+        width:1rem
+    }
+    .download .text .name {
+        font-size: 0.65rem;;
+    }
+    .download .text {
+        font-size: 0.5rem;
+    }
+    .download button{
+        width:2.5rem;
+        height:2.4rem;
+        border: 1px solid var(--main-color);
+    }
+    .download .upload-container {
+        width:65%;
+        gap:3px;
+        bottom:10%;
+    }
+    .download .upload-container progress{
+        width:90%;
+    }
+    .download .upload-container svg{
+        width:8px;
+        height:80%;
+    }
+    .add .adding{
+        width:3rem;
+        height:3rem;
+        font-size:2rem;
+    }
+    .add a svg{
+    width:30px;
+    }
+    .add a p{
+        font-size: 0.5rem;
+    }
+}
+@media (min-width:400px) and (max-width:500px) {
+    main{
+        width:90%;
+        min-height: 60%;
+        height: 60%;
+    }
+    .header h3{
+        font-size:90%;
+    }
+    .header #file {
+        width:4.5rem;
+        height: 4.5rem;
+    }
+    .header #file svg{
+        width:2.5rem;
+    }
+
+    .download .icon{
+        width:2.5rem;
+        height: 2.3rem;
+        border-radius: 10px;
+    }
+    .download .icon svg{
+        width:1rem
+    }
+    .download .text {
+        font-size: 0.5rem;
+    }
+    .download .text .name {
+        font-size: 0.6rem;
+    }
+    .download button{
+        width:40px;
+        height:39px;
+        border: 1px solid var(--main-color);
+    }
+    .download .upload-container {
+        width:65%;
+        gap:3px;
+        bottom:10%;
+    }
+    .download .upload-container progress{
+        width:90%;
+        
+    }
+    .download .upload-container svg{
+        width:8px;
+        height:80%;
+    }
+    .add .adding{
+        width:3rem;
+        height:3rem;
+        font-size:2rem;
+    }
+    .add a svg{
+    width:30px;
+    }
+    .add a p{
+        font-size: 0.5rem;
+    }
+}
+@media (min-width:290px) and (max-width:400px) {
+    main{
+        width:90%;
+        min-height: 60%;
+        height: 60%;
+    }
+    .header h3{
+        font-size:90%;
+    }
+    .header #file {
+        width:4.5rem;
+        height: 4.5rem;
+    }
+    .header #file svg{
+        width:2.5rem;
+    }
+
+    .download .icon{
+        width:2.5rem;
+        height: 2.3rem;
+        border-radius: 10px;
+    }
+    .download .icon svg{
+        width:1rem
+    }
+    .download .text .name {
+        font-size: 0.5rem;;
+    }
+    .download button{
+        width:40px;
+        height:35px;
+        border: 1px solid var(--main-color);
+    }
+    .download .upload-container {
+        width:55%;
+        gap:3px;
+    }
+    .download .upload-container progress{
+        width:90%;
+    }
+    .download .upload-container svg{
+        width:8px;
+        height:80%;
+    }
+    .add .adding{
+        width:3rem;
+        height:3rem;
+        font-size:2rem;
+    }
+    .add a svg{
+    width:30px;
+    }
+    .add a p{
+        font-size: 0.5rem;
+    }
+}

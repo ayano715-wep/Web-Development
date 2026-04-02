@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0; 
+}
+body{
+    background: url('backgrund.jpeg') no-repeat center;
+    background-size: cover;
+}   
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px rgba(53, 83, 17, 0.44) solid;
+    border-radius: 5%;
+    margin:12% 30% 0 30%;
+    padding: 13% 0 16% 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px #6c6435ea;
+}
+h1{
+    position: absolute;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 36px;
+    color:#606c20fb;
+    text-shadow: 0 0 20px rgb(108, 100, 53);
+    font-style:oblique;
+    left:50px;
+}
+.h1{
+    position: absolute;
+    border: 1px solid #6c643592;
+    width:70%;
+    height: 10%;
+    top:30px;
+    padding: 0 10px 0 140px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 20px #6c6435a4;
+}
+.border{
+    padding:20% 50% 30% 40%;
+    position: absolute;
+    border: 1px solid #6c643592;
+    top:110px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 20px #6c6435a4;
+}
+#l_dolar{
+    position: absolute;
+    top:30px;
+    left: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: large;
+    color:  rgb(108, 100, 53);
+    text-shadow: 0 0px 2px  rgb(108, 100, 53);
+}
+#dolar{
+    position: absolute;
+    width: 49%;
+    height: 9%;
+    border-radius: 30px;
+    text-align: center; 
+    left:63px;
+    top:70px;
+    border: 5px double #6c643593; 
+    backdrop-filter: blur(5px);
+    background-color: rgba(240, 248, 255, 0);
+    font-size: 20px;
+    appearance: textfield;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+#dolar:focus{
+   border: 5px double #6c6435; 
+}
+#b_dolar{
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.255); 
+    backdrop-filter: blur(1px);
+    background-color: #616c209b;
+    font-weight: bold;
+    text-shadow: 0 0px 20px  rgba(0, 0, 0, 0.658);
+    left:195px;
+    top:142px;
+
+}
+#b_dolar:active{
+     box-shadow: 0 10px 20px  rgba(0, 0, 0, 0.489);
+     background-color: #616c20f0;
+}
+#b_dolar:hover{
+     background-color: #616c20c6;
+}
+#s_dolar{
+    font-weight: bold;
+    font-size: larger;
+    position: absolute;
+    top:79px;
+    right: 260px;
+    z-index: 1;
+     color:rgba(0, 0, 0, 0.423);
+}
+#l_syrian{
+    position: absolute;
+    top:200px;
+    left: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: large;
+    color:  rgb(108, 100, 53);
+    text-shadow: 0 0px 2px  rgb(108, 100, 53);
+}
+#syrian{
+    position: absolute;
+    width: 45%;
+    height: 9%;
+    border-radius: 30px;
+    text-align: center; 
+    left:63px;
+    top:240px;
+    border: 5px double #6c643593; 
+    backdrop-filter: blur(5px);
+    background-color: rgba(240, 248, 255, 0);
+    font-size: 20px;
+    appearance: textfield;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 54px;
+}
+#syrian:focus{
+   border: 5px double #6c6435; 
+}
+#b_syrian{
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.255); 
+    backdrop-filter: blur(1px);
+    background-color: #616c209b;
+    font-weight: bold;
+    text-shadow: 0 0px 20px  rgba(0, 0, 0, 0.658);
+    left:195px;
+    top:310px;
+
+}
+#b_syrian:active{
+     box-shadow: 0 10px 20px  rgba(0, 0, 0, 0.489);
+     background-color: #616c20f0;
+}
+#b_syrian:hover{
+     background-color: #616c20c6;
+}
+#s_syrian{
+    font-weight: bold;
+    font-size: larger;
+    position: absolute;
+    bottom: 109px;
+    right: 260px;
+    z-index: 1;
+    color:rgba(0, 0, 0, 0.423);
+}
+.result{
+    position: absolute;
+    right: 25px;
+    width:27%;
+    height: 20%;
+    text-align: center;
+    top: 70px;
+    font-size: small;
+    border-radius: 25px;
+    font-style:oblique;
+    border:5px double #616c204d;
+    box-shadow: 0 5px 0px #616c2040;
+}
+#r{
+    position: absolute;
+    top: -25px;
+    left: 60px;
+    color: #484012b1;
+}
+.result2{
+    position: absolute;
+    right: 25px;
+    width:27%;
+    height: 20%;
+    text-align: center;
+    top: 240px;
+    font-size: small;
+    border-radius: 25px;
+    font-style:oblique;
+    border:5px double #616c204d;
+    box-shadow: 0 5px 0px #616c2040;
+}
+.dolar_price{
+    position: absolute;
+    right: 165px;
+    width:60%;
+    height: 4%;
+    bottom: 15px;
+    font-size: small;
+    border-radius: 25px;
+    font-style:oblique;
+    border:5px double #616c207e;
+    box-shadow: 0 5px 10px #616c205f;
+}
+#price{
+    color: #680000;
+}
+#h_r{
+margin-top: 20px;
+}
+#h_r2{
+margin-top: 20px;
+}

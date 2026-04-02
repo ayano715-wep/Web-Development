@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:linear-gradient(180deg ,  black  10%, #600000, black 90%); 
+    color: #fff;
+    user-select: none;
+}
+.clock-border{
+    position: relative;
+    width: 600px;
+    height: 300px;
+    border: 2px solid #fff;
+    border-radius:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background:linear-gradient(-155deg,rgb(84, 0, 0) 50%,black 50%);
+    box-shadow: 0 0  25px #201f1fe2,inset 1px 1px 50px #000000cb;
+}
+h2{
+    position: relative;
+    align-self: center;
+    margin-bottom: 40px;
+    
+}
+.clock-border span{
+    font-size: 80px;
+    font-weight: bolder;
+    text-shadow: 1px 1px 10px #000000bf;
+    cursor: pointer;
+    transform : 0.5s ease-in-out
+}
+
+.btn{
+    width:20%;
+    height: 6%;
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+
+}
+.btn button{
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    border-top-color: black;
+    border-left-color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+    background: linear-gradient(45deg, rgb(84, 0, 0), black);
+    color: rgba(211, 203, 203, 0.745);
+    box-shadow: 1px 1px 10px #000000bf,inset 1px 1px 50px #000000cb;
+    transition: 0.3s ease-in-out;
+    border-radius: 20px;
+}
+.btn .start:hover{
+    background: linear-gradient(45deg, black, rgb(84, 0, 0));
+    color: whitesmoke;
+    text-shadow: 0 0 10px #ff0000b5;
+} 
+.btn .stop{
+    display: none;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(45deg, rgb(95, 5, 5), rgb(175, 20, 20));
+    text-shadow: 0 0 1px #ff0000b5;
+} 
+.btn .stop:hover{
+    background: linear-gradient(45deg, rgb(91, 6, 6), rgb(153, 7, 7));
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 5px #000000da;
+}
+.btn .reset{
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(85, 71, 71));
+}
+.btn .reset:hover{
+    background: linear-gradient(45deg, rgb(85, 71, 71), rgb(0, 0, 0));
+    color: rgb(199, 199, 199);
+    text-shadow: 0 0 5px #c5c5c535;
+}
+.btn .reset:disabled{   
+    opacity: 0.4;
+    pointer-events: none;
+}
+.btn .resume{
+    display: none;
+    background: linear-gradient(45deg, rgb(46, 83, 231), rgb(0, 0, 0));
+}
+.btn .resume:hover{
+    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(46, 83, 231));
+    color: whitesmoke;
+    text-shadow: 0 0 10px #2e53e7b5;
+}
+@media (max-width:700px){
+    .clock-border{
+        width: 90%;
+        height: 200px;
+    }
+    .clock-border span{
+        font-size: 50px;
+    }
+    .btn{
+        width: 70%;
+        height: 8%;
+        margin-top: 20px;
+        gap: 10px;
+    }
+    .btn button{
+        font-size: 20px;
+    }
+}       
